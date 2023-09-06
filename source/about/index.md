@@ -3,7 +3,7 @@ title: 關於我們
 date: 2023-09-06 20:45:41
 ---
 
-![](/assets/about/Banner.png)
+![](./assets/about/Banner.png)
 
 ---
 
