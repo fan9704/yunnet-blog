@@ -1,199 +1,211 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <title>網管相簿 | 國立雲林科技大學-宿舍網路管理小組</title>
+        <meta name="author" content="YunNET" />
+        <meta name="description" content="雲科網管-文件整理" />
+        <meta name="keywords" content="雲科網管,網路管理小組" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/yunnet-blog/./images/hexo.svg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/yunnet-blog/css/fonts.min.css" />
+<script> const mixins = {}; </script>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <meta name="keywords" content="雲科網管,網路管理小組">
-  
-  
-  <meta name="description" content="雲科網管-文件整理">
-  
-  <title>
-    網管相簿 |
-    
-    國立雲林科技大學-宿舍網路管理小組
-  </title>
-  <!-- Icon -->
-  
-    <link rel="shortcut icon" href="./favicon.ico">
-    
-  
-<link rel="stylesheet" href="/yunnet-blog/css/style.css">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
-  
-  
-<link rel="stylesheet" href="/yunnet-blog/fancybox/jquery.fancybox.min.css">
 
-  
-  
-<script src="/yunnet-blog/js/pace.min.js"></script>
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/yunnet-blog/js/lib/highlight.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"></head>
 
-<body>
-  <main class="content">
-    <section class="outer">
-  <article id="page-" class="article article-type-page" itemscope
-  itemprop="blogPost" data-scroll-reveal>
 
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-  <h1 class="article-title" itemprop="name">
-    網管相簿
-  </h1>
-  
-  
+<script src="/yunnet-blog/js/lib/preview.js"></script>
 
-    </header>
-    
 
-    
 
-    
 
-    <div class="article-entry" itemprop="articleBody">
-      
-<div class="justified-gallery" id="gallery">
-  
-  <div>
-    <a class="fancybox" data-fancybox="images" data-caption="112學年度-新生入住" href="/yunnet-blog/assets/gallery/20230902-%E6%96%B0%E7%94%9F%E5%85%A5%E4%BD%8F.jpg"
-      rel="gallery_clm7qaqw80000xwuea0e96v5f" title="112學年度-新生入住">
-      <img src="/yunnet-blog/assets/gallery/20230902-%E6%96%B0%E7%94%9F%E5%85%A5%E4%BD%8F.jpg" itemprop="image" alt="112學年度-新生入住">
-    </a>
-  </div>
-  
-</div>
 
-      
-      
+
+
+
+
+<link rel="stylesheet" href="/yunnet-blog/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>载入過慢請開啟快取 瀏覽器預設開啟</p>
+                        <img src="/yunnet-blog/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/yunnet-blog/">
+            <span>國立雲林科技大學-宿舍網路管理小組</span>
+        </a>
         
-      
+        <a href="/yunnet-blog/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/yunnet-blog/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/yunnet-blog/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/yunnet-blog/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/yunnet-blog/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;國立雲林科技大學-宿舍網路管理小組</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/yunnet-blog/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                <div class="article">
+    <div>
+        <h1>網管相簿</h1>
     </div>
-    <footer class="article-footer">
-      <a data-url="https://fan9704.github.io/yunnet-blog/gallery/index.html" data-id="clm7qaqw80000xwuea0e96v5f" class="article-share-link">
-        Share
-      </a>
-      
-    </footer>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/6
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
 
-  </div>
-
-  
-  
-  
-
-  
-
-</article>
-</section>
-    <footer class="footer">
-  <div class="outer">
-    <ul class="list-inline">
-      <li>國立雲林科技大學-宿舍網路管理小組 &copy; 2023</li>
-      
-        <li>
-          
-            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
-            
-        </li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
-    </ul>
-    <p><ul class="list-inline">
-  
-  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-</ul></p>
-  </div>
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            1997 - 2023 國立雲林科技大學-宿舍網路管理小組
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;YunNET
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
 </footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-  <div class="logo">
-    <a href="/yunnet-blog/"><img src="/images/hexo.svg" alt="國立雲林科技大學-宿舍網路管理小組"></a>
-  </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./archives">Archives</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./gallery">Gallery</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./about">About</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜尋">
-        <i class="fe fe-search"></i>
-        搜尋
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/yunnet-blog/./atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/yunnet-blog/js/jquery-2.0.3.min.js"></script>
 
-
-<script src="/yunnet-blog/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="/yunnet-blog/js/lazyload.min.js"></script>
-
-
-<script src="/yunnet-blog/js/busuanzi-2.3.pure.min.js"></script>
-
-
-
-<script src="/yunnet-blog/fancybox/jquery.fancybox.min.js"></script>
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/yunnet-blog/js/main.js"></script>
+        
+        
 
 
 
 
-
-
-<script src="/yunnet-blog/js/ocean.js"></script>
-
-</body>
-
+        
+    </body>
 </html>

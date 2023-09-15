@@ -1,277 +1,336 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
+    <head>
+        <meta charset="utf-8" />
+        <title>Archives | 國立雲林科技大學-宿舍網路管理小組</title>
+        <meta name="author" content="YunNET" />
+        <meta name="description" content="雲科網管-文件整理" />
+        <meta name="keywords" content="雲科網管,網路管理小組" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/yunnet-blog/./images/hexo.svg" />
+        <script src="https://cdn.staticfile.org/vue/3.3.4/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.4.0/css/all.min.css" />
+<link rel="stylesheet" href="/yunnet-blog/css/fonts.min.css" />
+<script> const mixins = {}; </script>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  
-  <meta name="keywords" content="雲科網管,網路管理小組">
-  
-  
-  <meta name="description" content="雲科網管-文件整理">
-  
-  <title>
-    彙整: 2023/9 |
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdn.staticfile.org/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.8.0/styles/github.min.css"
+/>
+<script src="/yunnet-blog/js/lib/highlight.js"></script>
+
+
+
+<script src="/yunnet-blog/js/lib/preview.js"></script>
+
+
+
+
+
+<link rel="stylesheet" href="/yunnet-blog/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>载入過慢請開啟快取 瀏覽器預設開啟</p>
+                        <img src="/yunnet-blog/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/yunnet-blog/">
+            <span>國立雲林科技大學-宿舍網路管理小組</span>
+        </a>
+        
+        <a href="/yunnet-blog/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/yunnet-blog/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/yunnet-blog/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/yunnet-blog/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/yunnet-blog/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;國立雲林科技大學-宿舍網路管理小組</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/yunnet-blog/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/yunnet-blog/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+                
+<div id="archives">
     
-    國立雲林科技大學-宿舍網路管理小組
-  </title>
-  <!-- Icon -->
-  
-    <link rel="shortcut icon" href="./favicon.ico">
-    
-  
-<link rel="stylesheet" href="/yunnet-blog/css/style.css">
-
-  
-  
-<link rel="stylesheet" href="/yunnet-blog/fancybox/jquery.fancybox.min.css">
-
-  
-  
-<script src="/yunnet-blog/js/pace.min.js"></script>
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-
-<body>
-  <main class="content">
-    <section class="outer">
-  <article class="articles">
-    
-    <h1 class="page-type-title">2023/9</h1>
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/yunnet-blog/archives/2023" class="archive-year">2023</a>
+    <div id="timeline-wrap" ref="timeline">
+        
+        <div class="timeline" data-title="網管小組-外修流程">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/9/6</div>
+                <a href="/yunnet-blog/2023/09/06/outfix-procedure/">
+                    <h3>網管小組-外修流程</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/yunnet-blog/categories/%E7%B6%B2%E7%AE%A1%E6%96%B0%E4%BA%BA/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            網管新人
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        
+                        <span class="tag">
+                            
+                            <a href="/yunnet-blog/tags/%E5%A4%96%E4%BF%AE/" style="color: #00bcd4">外修</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="網管小組-wi-fi分享器設定">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/9/6</div>
+                <a href="/yunnet-blog/2023/09/06/router-settings/">
+                    <h3>網管小組-Wi-Fi 分享器設定</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/yunnet-blog/categories/%E7%B6%B2%E7%AE%A1%E6%96%B0%E4%BA%BA/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            網管新人
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        
+                        <span class="tag">
+                            
+                            <a href="/yunnet-blog/tags/%E5%A4%96%E4%BF%AE/" style="color: #ff7d73">外修</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/yunnet-blog/tags/%E5%88%86%E4%BA%AB%E5%99%A8/" style="color: #00a596">分享器</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="網管小組-值班注意事項">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/9/6</div>
+                <a href="/yunnet-blog/2023/09/06/worktime-notice/">
+                    <h3>網管小組-值班注意事項</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/yunnet-blog/categories/%E7%B6%B2%E7%AE%A1%E6%96%B0%E4%BA%BA/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            網管新人
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        
+                        <span class="tag">
+                            
+                            <a href="/yunnet-blog/tags/%E5%80%BC%E7%8F%AD/" style="color: #ffa2c4">值班</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="timeline" data-title="網管小組-工具箱工具說明">
+            <div class="timeline-tail"></div>
+            <div class="timeline-content">
+                <div class="item-time">2023/9/6</div>
+                <a href="/yunnet-blog/2023/09/06/toolkit-introduction/">
+                    <h3>網管小組-工具箱工具說明</h3>
+                </a>
+                <div class="info">
+                    
+                    <span class="category">
+                        <a href="/yunnet-blog/categories/%E7%B6%B2%E7%AE%A1%E6%96%B0%E4%BA%BA/">
+                            <span class="icon">
+                                <i class="fa-solid fa-bookmark fa-fw"></i>
+                            </span>
+                            網管新人
+                        </a>
+                    </span>
+                    
+                    
+                    <span class="tags">
+                        <span class="icon">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </span>
+                        
+                        
+                        <span class="tag">
+                            
+                            <a href="/yunnet-blog/tags/%E5%99%A8%E6%9D%90%E7%B5%84/" style="color: #03a9f4">器材組</a>
+                        </span>
+                        
+                        <span class="tag">
+                            
+                            <a href="/yunnet-blog/tags/%E5%A4%96%E4%BF%AE/" style="color: #ff7d73">外修</a>
+                        </span>
+                        
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+        
     </div>
-    <div class="archives">
-      
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/yunnet-blog/2023/09/06/toolkit-introduction/">網管小組-工具箱工具說明</a>
-  </h2>
-  
-  
+</div>
 
-      <a href="/yunnet-blog/2023/09/06/toolkit-introduction/" class="archive-article-date">
-  <time datetime="2023-09-06T08:42:41.000Z" itemprop="datePublished">09/06</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/yunnet-blog/2023/09/06/worktime-notice/">網管小組-值班注意事項</a>
-  </h2>
-  
-  
-
-      <a href="/yunnet-blog/2023/09/06/worktime-notice/" class="archive-article-date">
-  <time datetime="2023-09-06T08:42:41.000Z" itemprop="datePublished">09/06</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/yunnet-blog/2023/09/06/router-settings/">網管小組-Wi-Fi 分享器設定</a>
-  </h2>
-  
-  
-
-      <a href="/yunnet-blog/2023/09/06/router-settings/" class="archive-article-date">
-  <time datetime="2023-09-06T08:42:41.000Z" itemprop="datePublished">09/06</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  
-  
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      
-  
-  <h2 class="archive-article-title" itemprop="name">
-    <a href="/yunnet-blog/2023/09/06/outfix-procedure/">網管小組-外修流程</a>
-  </h2>
-  
-  
-
-      <a href="/yunnet-blog/2023/09/06/outfix-procedure/" class="archive-article-date">
-  <time datetime="2023-09-06T08:42:41.000Z" itemprop="datePublished">09/06</time>
-</a>
-    </header>
-    
-      
-    
-    
-    
-  </div>
-
-</article>
-      
-      
+                <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            1997 - 2023 國立雲林科技大學-宿舍網路管理小組
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;YunNET
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
     </div>
-  </div>
-  
-  
-
-  
-</section>
-    <footer class="footer">
-  <div class="outer">
-    <ul class="list-inline">
-      <li>國立雲林科技大學-宿舍網路管理小組 &copy; 2023</li>
-      
-        <li>
-          
-            <a href="https://beian.miit.gov.cn/" target="_blank"></a>
-            
-        </li>
-      
-      <li>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></li>
-      <li>theme  <a target="_blank" rel="noopener" href="https://github.com/zhwangart/hexo-theme-ocean">Ocean</a></li>
-    </ul>
-    <p><ul class="list-inline">
-  
-  <li><i class="fe fe-smile-alt tooltip" data-tooltip="UV"></i> <span id="busuanzi_value_site_uv"></span></li>
-  
-</ul></p>
-  </div>
 </footer>
-  </main>
-  <aside class="sidebar">
-    <button class="navbar-toggle"></button>
-<nav class="navbar">
-  
-  <div class="logo">
-    <a href="/yunnet-blog/"><img src="/images/hexo.svg" alt="國立雲林科技大學-宿舍網路管理小組"></a>
-  </div>
-  
-  <ul class="nav nav-main">
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./">Home</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./archives">Archives</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./gallery">Gallery</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link" href="/yunnet-blog/./about">About</a>
-    </li>
-    
-    <li class="nav-item">
-      <a class="nav-item-link nav-item-search" title="搜尋">
-        <i class="fe fe-search"></i>
-        搜尋
-      </a>
-    </li>
-  </ul>
-</nav>
-<nav class="navbar navbar-bottom">
-  <ul class="nav">
-    <li class="nav-item">
-      <div class="totop" id="totop">
-  <i class="fe fe-rocket"></i>
-</div>
-    </li>
-    <li class="nav-item">
-      
-      <a class="nav-item-link" target="_blank" href="/yunnet-blog/./atom.xml" title="RSS Feed">
-        <i class="fe fe-feed"></i>
-      </a>
-      
-    </li>
-  </ul>
-</nav>
-<div class="search-form-wrap">
-  <div class="local-search local-search-plugin">
-  <input type="search" id="local-search-input" class="local-search-input" placeholder="Search...">
-  <div id="local-search-result" class="local-search-result"></div>
-</div>
-</div>
-  </aside>
-  
-<script src="/yunnet-blog/js/jquery-2.0.3.min.js"></script>
 
-
-<script src="/yunnet-blog/js/jquery.justifiedGallery.min.js"></script>
-
-
-<script src="/yunnet-blog/js/lazyload.min.js"></script>
-
-
-<script src="/yunnet-blog/js/busuanzi-2.3.pure.min.js"></script>
-
-
-
-<script src="/yunnet-blog/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-
-
-<script src="/yunnet-blog/js/ocean.js"></script>
-
-</body>
-
+            </div>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/yunnet-blog/js/main.js"></script>
+        
+    </body>
 </html>
